@@ -33,3 +33,33 @@ SELECT COUNT(city) - COUNT(DISTINCT city) FROM station;
 SELECT city, LENGTH(city) AS min_length FROM station ORDER BY min_length ASC, city ASC LIMIT 1;
 SELECT city, LENGTH(city) AS max_length FROM station ORDER BY max_length DESC, city ASC LIMIT 1;
 
+/* Weather Observation Station 6 */
+SELECT DISTINCT city FROM station WHERE city REGEXP '^[aeiouAEIOU].*';
+
+/* Weather Observation Station 7 */ 
+SELECT DISTINCT city FROM station WHERE city REGEXP '[aeiou]$';
+
+/* Weather Observation Station 8 */ 
+SELECT DISTINCT city FROM station WHERE city REGEXP '^[aeiouAEIOU].*[aeiou]$';
+
+/* Weather Observation Station 9 */
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '^[aeiouAEIOU].*';
+
+/* Weather Observation Station 10 */
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '[aeiou]$';
+
+/* Weather Observation Station 11 */
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '^[aeiouAEIOU].*[aeiou]$';
+
+/* Weather Observation Station 12 */ 
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '^[aeiouAEIOU].*' AND city NOT REGEXP '[aeiou]$';
+
+/* Higher than 75 marks */ 
+SELECT NAME FROM students WHERE marks > 75 
+ORDER BY RIGHT(NAME, 3), id; 
+
+/* Employee names */
+SELECT NAME FROM employee ORDER BY NAME ASC;
+
+/* Employee Salaries */ 
+SELECT NAME FROM Employee WHERE salary > 2000 AND months < 10 ORDER BY employee_id; 
